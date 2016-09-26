@@ -1,0 +1,26 @@
+{
+  "name": "lucasruroken/lara-admin-template",
+  "description": "Gentelella implementation for Lara Admin.*",
+  "authors": [
+    {
+      "name": "lucasruroken",
+      "email": "lucasjavierjuarez@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "LucasRuroken\\LaraAdminTemplate\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LucasRuroken\\LaraAdminTemplate\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=5.6.4",
+    "illuminate/support": "~5.3"
+  },
+  "require-dev": {
+  }
+}
