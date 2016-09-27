@@ -3,6 +3,8 @@
 namespace LucasRuroken\LaraAdmin\Gentelella;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
+use LucasRuroken\LaraAdmin\Builders\MenuBuilder;
 
 class GentelellaServiceProvider extends ServiceProvider
 {
@@ -15,6 +17,7 @@ class GentelellaServiceProvider extends ServiceProvider
     {
         $this->publishAssets();
         $this->registerViews();
+        $this->registerComposers();
     }
 
     /**
@@ -53,5 +56,26 @@ class GentelellaServiceProvider extends ServiceProvider
     private function registerViews()
     {
         $this->loadViewsFrom(__DIR__ . '/Views', 'gentelella');
+
+        $this->publishes([
+            __DIR__.'/Views' => resource_path('views/vendor/gentelella'),
+        ], 'lara-admin-gentelella-views');
+    }
+
+    public function registerComposers()
+    {
+        if(file_exists(config_path('lara-admin-menu.php')))
+        {
+            $menuBuilder = config('lara-admin-menu.menu-builder');
+        }
+        else
+        {
+            $menuBuilder = new MenuBuilder();
+        }
+
+        view()->composer('gentelella::modules.sidebar', function(View $view) use ($menuBuilder) {
+
+            return $view->with('menuBuilder', $menuBuilder);
+        });
     }
 }
