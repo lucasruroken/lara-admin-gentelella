@@ -13,7 +13,7 @@ class LaraAdminGentelellaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerAssets();
+        $this->publishAssets();
         $this->registerViews();
     }
 
@@ -27,11 +27,22 @@ class LaraAdminGentelellaServiceProvider extends ServiceProvider
         //
     }
 
-    private function registerAssets()
+    private function publishAssets()
     {
+        // Custom css
         $this->publishes([
-            __DIR__.'/assets' => public_path('vendor/gentelella'),
-        ], 'lara-admin-gentelella');
+            __DIR__.'/../../../bower-asset/gentelella/build/css/custom.min.css' => public_path('assets/css/custom.min.css'),
+        ], 'lara-admin-gentelella-assets');
+
+        // Custom js
+        $this->publishes([
+            __DIR__.'/../../../bower-asset/gentelella/build/js/custom.min.js' => public_path('assets/js/custom.min.js'),
+        ], 'lara-admin-gentelella-assets');
+
+        // Publish all vendors
+        $this->publishes([
+            __DIR__.'/../../../bower-asset/gentelella/vendors' => public_path('assets/vendors'),
+        ], 'lara-admin-gentelella-assets');
     }
 
     private function registerViews()
