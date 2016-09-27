@@ -1,6 +1,6 @@
 <?php
 
-namespace LucasRuroken\LaraAdmin;
+namespace LucasRuroken\LaraAdmin\Gentelella;
 
 use Illuminate\Support\ServiceProvider;
 
