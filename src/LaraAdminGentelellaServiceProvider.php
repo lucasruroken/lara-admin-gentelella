@@ -14,6 +14,7 @@ class LaraAdminGentelellaServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerAssets();
+        $this->registerViews();
     }
 
     /**
@@ -31,5 +32,10 @@ class LaraAdminGentelellaServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/assets' => public_path('vendor/gentelella'),
         ], 'lara-admin-gentelella');
+    }
+
+    private function registerViews()
+    {
+        $this->loadViewsFrom(__DIR__ . '/Views', 'gentelella');
     }
 }
