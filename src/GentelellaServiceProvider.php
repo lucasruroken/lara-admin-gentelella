@@ -44,7 +44,7 @@ class GentelellaServiceProvider extends ServiceProvider
 
         // Publish all vendors
         $this->publishes([
-            __DIR__.'/../../../bower-asset/gentelella/vendors' => public_path('assets/vendors'),
+            __DIR__.'/../../../bower-asset/gentelella/vendors' => public_path('assets/vendor'),
         ], 'lara-admin-gentelella-assets');
 
         // Publish images
@@ -64,15 +64,7 @@ class GentelellaServiceProvider extends ServiceProvider
 
     public function registerComposers()
     {
-        if(file_exists(config_path('lara-admin-menu.php')))
-        {
-            $menuBuilder = config('lara-admin-menu.menu-builder');
-        }
-        else
-        {
-            $menuBuilder = new MenuBuilder();
-        }
-
+        $menuBuilder = file_exists(config_path('lara-admin-menu.php')) ? config('lara-admin-menu.menu-builder') : new MenuBuilder();
         view()->composer('gentelella::modules.sidebar', function(View $view) use ($menuBuilder) {
 
             return $view->with('menuBuilder', $menuBuilder);

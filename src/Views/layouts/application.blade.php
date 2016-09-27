@@ -16,16 +16,16 @@
         <link href="{{ asset('assets/vendor/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
         <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet">
     @show
-    <title>@section('title', 'Lara Admin')</title>
+    <title>@yield('title', 'Lara Admin')</title>
 </head>
 
-<body class="@section('body-class', 'nav-md')">
+<body class="@yield('body-class', 'nav-md')">
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>@section('content-title', 'Laravel Admin')</span></a>
+                    <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>@yield('content-title', 'Laravel Admin')</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -44,7 +44,7 @@
 
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
-                        <h3>@section('sidebar-title', 'General')</h3>
+                        <h3>@yield('sidebar-title', 'General')</h3>
                         @include('gentelella::modules.sidebar')
                     </div>
                 </div>
@@ -74,7 +74,7 @@
         </div>
 
         <div class="right_col" role="main">
-
+            @yield('content')
         </div>
 
         @section('footer')

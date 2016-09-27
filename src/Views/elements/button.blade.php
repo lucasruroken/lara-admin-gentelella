@@ -1,6 +1,6 @@
 <li>
     <a @if(!$button->hasButtons()) href="{{ $button->getLink() }}" @endif>
-        @if($button->getIcon()) {{ $button->getIcon() }} @endif
+        @if($button->getIcon()) {!! $button->getIcon() !!} @endif
         {{ $button->getName() }}
         @if($button->hasButtons()) <span class="fa fa-chevron-down"></span> @endif
     </a>
