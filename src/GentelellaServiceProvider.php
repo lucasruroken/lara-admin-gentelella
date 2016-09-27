@@ -4,7 +4,7 @@ namespace LucasRuroken\LaraAdmin\Gentelella;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaraAdminGentelellaServiceProvider extends ServiceProvider
+class GentelellaServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
