@@ -43,6 +43,11 @@ class LaraAdminGentelellaServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../../../bower-asset/gentelella/vendors' => public_path('assets/vendors'),
         ], 'lara-admin-gentelella-assets');
+
+        // Publish images
+        $this->publishes([
+            __DIR__.'/../../../bower-asset/gentelella/production/images' => public_path('assets/images'),
+        ], 'lara-admin-gentelella-assets');
     }
 
     private function registerViews()
