@@ -55,10 +55,10 @@ class GentelellaServiceProvider extends ServiceProvider
 
     private function registerViews()
     {
-        $this->loadViewsFrom(__DIR__ . '/Views', 'gentelella');
+        $this->loadViewsFrom(__DIR__ . '/views', 'gentelella');
 
         $this->publishes([
-            __DIR__.'/Views' => resource_path('views/vendor/gentelella'),
+            __DIR__.'/views' => resource_path('views/vendor/gentelella'),
         ], 'lara-admin-gentelella-views');
     }
 
