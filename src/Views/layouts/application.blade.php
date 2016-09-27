@@ -8,13 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     @show
     @section('header-css')
-        <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-        <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-        <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-        <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
-        <link href="../build/css/custom.min.css" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/nprogress/nprogress.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/iCheck/skins/flat/green.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet">
     @show
     <title>@section('title', 'Lara Admin')</title>
 </head>
@@ -83,30 +83,28 @@
     </div>
 </div>
 @section('footer-javascript')
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
-    <script src="../vendors/nprogress/nprogress.js"></script>
-    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
-    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
-    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <script src="../vendors/iCheck/icheck.min.js"></script>
-    <script src="../vendors/skycons/skycons.js"></script>
-    <script src="../vendors/Flot/jquery.flot.js"></script>
-    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
-    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
-    <script src="../vendors/DateJS/build/date.js"></script>
-    <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <script src="js/moment/moment.min.js"></script>
-    <script src="js/datepicker/daterangepicker.js"></script>
-    <script src="../build/js/custom.min.js"></script>
+    <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/fastclick/lib/fastclick.js') }}"></script>
+    <script src="{{ asset('assets/vendor/nprogress/nprogress.js') }}"></script>
+    <script src="{{ asset('assets/vendor/Chart.js/dist/Chart.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/gauge.js/dist/gauge.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/iCheck/icheck.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/skycons/skycons.js') }}"></script>
+    <script src="{{ asset('assets/vendor/Flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('assets/vendor/Flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ asset('assets/vendor/Flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ asset('assets/vendor/Flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ asset('assets/vendor/Flot/jquery.flot.resize.js') }}"></script>
+    <script src="{{ asset('assets/vendor/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ asset('assets/vendor/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/flot.curvedlines/curvedLines.js') }}"></script>
+    <script src="{{ asset('assets/vendor/DateJS/build/date.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.min.js') }}"></script>
 @show
 </body>
 </html>
