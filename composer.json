@@ -9,12 +9,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "LucasRuroken\\LaraAdminTemplate\\": "src/"
+      "LucasRuroken\\LaraAdminGentelella\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "LucasRuroken\\LaraAdminTemplate\\Tests\\": "tests/"
+      "LucasRuroken\\LaraAdminGentelella\\Tests\\": "tests/"
     }
   },
   "require": {
