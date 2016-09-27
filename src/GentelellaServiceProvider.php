@@ -9,6 +9,16 @@ use LucasRuroken\LaraAdmin\Builders\MenuBuilder;
 class GentelellaServiceProvider extends ServiceProvider
 {
     /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        // Nothing here...
+    }
+
+    /**
      * Bootstrap the application services.
      *
      * @return void
@@ -20,37 +30,19 @@ class GentelellaServiceProvider extends ServiceProvider
         $this->registerComposers();
     }
 
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
     private function publishAssets()
     {
-        // Custom css
-        $this->publishes([
-            __DIR__.'/../../../bower-asset/gentelella/build/css/custom.min.css' => public_path('assets/css/custom.min.css'),
-        ], 'lara-admin-gentelella-assets');
+        $assets = [
+            __DIR__.'/../../../bower-asset/gentelella/build/css/custom.min.css'     => [public_path('assets/css/custom.min.css'), 'lara-admin-gentelella-assets'],
+            __DIR__.'/../../../bower-asset/gentelella/build/js/custom.min.js'       => [public_path('assets/js/custom.min.js'), 'lara-admin-gentelella-assets'],
+            __DIR__.'/../../../bower-asset/gentelella/vendors'                      => [public_path('assets/vendor'), 'lara-admin-gentelella-assets'],
+            __DIR__.'/../../../bower-asset/gentelella/production/images'            => [public_path('assets/images'), 'lara-admin-gentelella-assets']
+        ];
 
-        // Custom js
-        $this->publishes([
-            __DIR__.'/../../../bower-asset/gentelella/build/js/custom.min.js' => public_path('assets/js/custom.min.js'),
-        ], 'lara-admin-gentelella-assets');
-
-        // Publish all vendors
-        $this->publishes([
-            __DIR__.'/../../../bower-asset/gentelella/vendors' => public_path('assets/vendor'),
-        ], 'lara-admin-gentelella-assets');
-
-        // Publish images
-        $this->publishes([
-            __DIR__.'/../../../bower-asset/gentelella/production/images' => public_path('assets/images'),
-        ], 'lara-admin-gentelella-assets');
+        foreach($assets AS $path => $values)
+        {
+            $this->publishes([$path => $values[0]], $values[1]);
+        }
     }
 
     private function registerViews()
